@@ -25,12 +25,14 @@ const Banner = () => {
             <p className="lg:text-lg sm:text-base text-sm text-gray-600">
               {users?.user?.about.title}
             </p>
-            
+
             <div className="App  mt-28 lg:text-lg sm:text-base text-sm text-gray-600">
-            
               <Typewriter
                 speed={100}
-                text={["I develop 3D visuals", "user interfaces and web applications"]}
+                text={[
+                  "I develop 3D visuals",
+                  "user interfaces and web applications",
+                ]}
                 loop={true}
               />
               <br />
@@ -52,6 +54,22 @@ const Banner = () => {
                 alt={users?.user.about.name} // Assuming user data has name information
               />
             )}
+            <Image
+            src="https://i.ibb.co/Q6L8V6D/5-years-removebg-preview.png"
+            width={200}
+            height={200}
+            className="absolute -bottom-2 -left-28"
+            alt="experience img"
+            ></Image>
+            {/* <p
+              style={{
+                backgroundImage:
+                  "url(https://i.ibb.co/Q6L8V6D/5-years-removebg-preview.png)",
+              }}
+              className="absolute -bottom-4 w-40 h-40 p-9 text-2xl md:text-6xl text-white font-semibold"
+            >
+              5 <span className="text-lg font-bold text-black"> years experience</span>
+            </p> */}
           </div>
         </div>
       </section>

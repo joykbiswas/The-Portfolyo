@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import {
   FaFacebookF,
   FaTwitter,
@@ -15,35 +16,46 @@ import {
 } from "react-icons/fa";
 import person from "../../assets/abdullah.png";
 import Image from "next/image";
+import { userData } from "@/lib/BuilderApi";
 
 const MainSidear = () => {
+  const [users, SetUsers] = useState(null);
+  useEffect(() => {
+    userData()
+      .then((res) => SetUsers(res))
+      .catch((err) => console.log(err));
+  }, []);
+  console.log(users);
   return (
     <div className="flex sticky top-0 justify-between flex-col items-center space-y-3 py-24 ">
       <div className="rounded-md z-10   -mb-40">
-        <Image
-          data-aos="fade-down"
-          className="rounded-lg w-48"
-          width={150}
-          height={200}
-          src={person}
-          alt=""
-        />
+      {users && (
+              <Image
+              data-aos="fade-down"
+                src={users?.user.about.avatar.url} // Assuming user data has avatar information
+                width={100}
+                height={100}
+                className="rounded-lg w-40"
+                alt={users?.user.about.name} // Assuming user data has name information
+              />
+            )}
       </div>
       <div className="text-center  bg-white dark:bg-my-dark dark:text-white p-6 rounded-xl ">
         <h1
           data-aos="zoom-in-up"
           className="text-2xl mt-36 text-gray-800 font-bold dark:text-white dark:mb-2"
         >
-          Abdullah Bin Ziad
+         {users?.user?.about.name}
         </h1>
         <div
           data-aos="zoom-in-up"
           className="dark:bg-my-dark-btn rounded-md w-fit mx-auto px-8 py-2 "
         >
           <h3 className="text-xl dark:text-my-dark-txt ">
-            Full Stack Engineer
+          {users?.user?.about.title}
           </h3>
         </div>
+        {/* social media link */}
         <div
           data-aos="zoom-in-down"
           className="flex  justify-center gap-3 mt-4"
@@ -86,7 +98,7 @@ const MainSidear = () => {
             </div>
             <div className="text-left">
               <h4 className="text-sm text-my-dark-txt">Phone</h4>
-              <h2 className="text-lg">+8801772065894</h2>
+              <h2 className="text-lg">{users?.user?.about.phoneNumber}</h2>
             </div>
           </div>
           <hr className="w-full" />
@@ -98,7 +110,7 @@ const MainSidear = () => {
             </div>
             <div className="text-left">
               <h4 className="text-sm text-my-dark-txt">Location</h4>
-              <h2 className="text-lg">Mymensingh Sadar</h2>
+              <h2 className="text-lg">{users?.user?.about.address}</h2>
             </div>
           </div>
           <hr className="w-full" />
@@ -110,7 +122,7 @@ const MainSidear = () => {
             </div>
             <div className="text-left">
               <h4 className="text-sm text-my-dark-txt">Email</h4>
-              <h2 className="text-lg">abdullahbinziad@gmail.com</h2>
+              <h2 className="text-lg">{users?.user?.about.contactEmail}</h2>
             </div>
           </div>
 
