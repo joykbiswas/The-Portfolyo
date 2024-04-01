@@ -4,8 +4,6 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import "./styles.css";
 import Typewriter from "react-ts-typewriter";
-// import Container from "../../components/Shared/Container";
-
 const Banner = () => {
   const [users, SetUsers] = useState(null);
   useEffect(() => {
@@ -22,11 +20,11 @@ const Banner = () => {
             <h1 className="lg:text-5xl sm:text-4xl text-3xl font-bold leading-tight text-gray-900">
               {users?.user?.about.name}
             </h1>
-            <p className="lg:text-lg sm:text-base text-sm text-gray-600">
+            <p className="md:text-2xl text-lg sm:text-base text-gray-600">
               {users?.user?.about.title}
             </p>
 
-            <div className="App  mt-28 lg:text-lg sm:text-base text-sm text-gray-600">
+            <div className="App  mt-28 lg:text-3xl md:text-xl text-sm text-gray-600">
               <Typewriter
                 speed={100}
                 text={[
@@ -41,8 +39,6 @@ const Banner = () => {
             <p className="lg:text-lg sm:text-base text-sm text-gray-600">
               {users?.user?.about.description}
             </p>
-
-            <p className="text-sm text-gray-500">Trusted by 5000+ Users</p>
           </div>
           <div className="relative">
             {users && (
@@ -61,15 +57,7 @@ const Banner = () => {
             className="absolute -bottom-2 -left-28"
             alt="experience img"
             ></Image>
-            {/* <p
-              style={{
-                backgroundImage:
-                  "url(https://i.ibb.co/Q6L8V6D/5-years-removebg-preview.png)",
-              }}
-              className="absolute -bottom-4 w-40 h-40 p-9 text-2xl md:text-6xl text-white font-semibold"
-            >
-              5 <span className="text-lg font-bold text-black"> years experience</span>
-            </p> */}
+            
           </div>
         </div>
       </section>

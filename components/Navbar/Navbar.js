@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { FaAddressCard, FaBlog, FaBookReader, FaHome } from "react-icons/fa";
+import { FaAddressCard, FaBookReader, FaHome } from "react-icons/fa";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 // import { useRouter } from "next/router";
