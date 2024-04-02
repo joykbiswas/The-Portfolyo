@@ -33,8 +33,8 @@ const Testimonials = () => {
     };
   }, [currentSlider]);
 
-  const isSmallScreen = window.innerWidth <= 768;
-  return (
+  const isSmallScreen = typeof window !== "undefined" && window.innerWidth <= 768;
+    return (
     <div>
         <h3 className="text-4xl font-semibold pt-10 pb-7 text-center">Testimonials</h3>
       <div className="max-w-full   mx-auto h-[400px] flex flex-row items-center overflow-hidden gap-5 lg:gap-7 px-2 ">
@@ -51,13 +51,13 @@ const Testimonials = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="black"
               >
-                {" "}
-                <g strokeWidth="0"></g>{" "}
+                
+                <g strokeWidth="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                ></g>{" "}
+                ></g>
                 <g id="SVGRepo_iconCarrier">
                   <path
                     fill="black"
@@ -78,15 +78,15 @@ const Testimonials = () => {
                 fill="black"
                 transform="rotate(180)"
               >
-                {" "}
-                <g strokeWidth="0"></g>{" "}
+                
+                <g strokeWidth="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                ></g>{" "}
+                ></g>
                 <g id="SVGRepo_iconCarrier">
-                  {" "}
+                  
                   <path
                     fill="black"
                     d="M685.248 104.704a64 64 0 010 90.496L368.448 512l316.8 316.8a64 64 0 01-90.496 90.496L232.704 557.248a64 64 0 010-90.496l362.048-362.048a64 64 0 0190.496 0z"

@@ -1,11 +1,9 @@
-import React from 'react';
+import Project from "@/components/Works/Project/Project";
 
 const Works = () => {
-    return (
-        <div>
-            <h3>Works</h3>
-        </div>
-    );
+  return <div>
+    <Project></Project>
+  </div>;
 };
 
 export default Works;

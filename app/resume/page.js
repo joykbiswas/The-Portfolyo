@@ -1,9 +1,12 @@
+import Education from '@/components/Resume/Education/Education';
+import Skills from '@/components/Resume/Skills/Skills';
 import React from 'react';
 
 const Resume = () => {
     return (
         <div>
-            <h2>Resume</h2>
+            <Education></Education>
+            <Skills></Skills>
         </div>
     );
 };
