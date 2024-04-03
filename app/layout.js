@@ -3,6 +3,7 @@ import "./globals.css";
 import MainSider from "@/components/MainSider/MainSider";
 import JumpButton from "./jump/JumpButton";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+     
       <body className={inter.className}>
       <div  style={{backgroundImage: 'url(https://i.ibb.co/26P93xn/bg.jpg)'}} className=" bg-bg-image bg-no-repeat bg-cover dark:bg-bg-image-dark bg-fixed font-font-rubik">
       <div className=" container mx-auto md:flex justify-center gap-6 ">
@@ -23,7 +25,9 @@ export default function RootLayout({ children }) {
         <div className=" md:w-2/3 border md:py-20 space-y-2 flex flex-col">
             <Navbar></Navbar>
           {children}
+          
           <JumpButton></JumpButton>
+          <Footer></Footer>
         </div>
       </div>
     </div>

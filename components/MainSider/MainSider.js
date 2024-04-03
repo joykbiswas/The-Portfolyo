@@ -14,7 +14,6 @@ import {
   FaDownload,
   FaInstagram,
 } from "react-icons/fa";
-import person from "../../assets/abdullah.png";
 import Image from "next/image";
 import { userData } from "@/lib/BuilderApi";
 
@@ -61,25 +60,25 @@ const MainSidear = () => {
           className="flex  justify-center gap-3 mt-4"
         >
           <a
-            href="https://www.facebook.com/mdabdullahbinziad"
+            href="#"
             className="p-3  text-blue-700 hover:text-white bg-my-gray dark:bg-my-dark-btn rounded-md hover:bg-btn-grad"
           >
             <FaFacebookF className="" />
           </a>
           <a
-            href="https://www.instagram.com/abdullahbinziad/"
+            href="#"
             className="p-3  text-blue-700 hover:text-white bg-my-gray dark:bg-my-dark-btn rounded-md hover:bg-btn-grad"
           >
             <FaInstagram className="" />
           </a>
           <a
-            href="https://abdullahbinziad.com/"
+            href="#"
             className="p-3  text-red-700 hover:text-white bg-my-gray dark:bg-my-dark-btn rounded-md hover:bg-btn-grad"
           >
             <FaWeebly className="" />
           </a>
           <a
-            href="https://www.linkedin.com/in/abdullahbinziad/"
+            href="#"
             className="p-3  text-blue-700 hover:text-white bg-my-gray dark:bg-my-dark-btn rounded-md hover:bg-btn-grad"
           >
             <FaLinkedinIn className=" " />
@@ -128,7 +127,7 @@ const MainSidear = () => {
 
           <hr className="w-full" />
         </div>
-        <a href="">
+        <a href="#">
           <button
             data-aos="fade-down"
             data-aos-easing="linear"

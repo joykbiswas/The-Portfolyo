@@ -2,11 +2,12 @@
 import Link from "next/link";
 import { FaAddressCard, FaBookReader, FaHome } from "react-icons/fa";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useState } from "react";
 // import { useRouter } from "next/router";
 
 const Navbar = () => {
   const router = useRouter();
+  const [linkClicked, setLinkClicked] = useState(false);
   const navLink = [
     {
       href: "/",
@@ -40,7 +41,8 @@ const Navbar = () => {
       <div className="flex justify-start gap-3 bg-white dark:bg-my-dark px-6 py-4 rounded-md">
         {navLink.map((link) => {
           // const isActive = pathname.startsWith(link.href)
-          const isActive = pathname.startsWith(link.href) && (pathname === link.href);
+          const isActive =
+            pathname.startsWith(link.href) && pathname === link.href;
 
           console.log(isActive);
 
@@ -50,12 +52,15 @@ const Navbar = () => {
               href={link.href}
               onClick={handleLinkClick}
               className={
-                isActive ? "bg-gradient-to-r from-red-500 to-yellow-500 p-2 mr-3 text-white " : "bg-slate-200 p-3 mr-3"
+                isActive
+                  ? " bg-btn-grad  p-3 mr-3 text-white items-center "
+                  : "bg-slate-200 p-3 mr-3 items-center"
               }
             >
-              {link.icon}
-              <h1>{link.text}</h1>
-              
+              <div>
+                {link.icon}
+                <h1>{link.text}</h1>
+              </div>
             </Link>
           );
         })}
