@@ -19,10 +19,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <div  style={{backgroundImage: 'url(https://i.ibb.co/26P93xn/bg.jpg)'}} className=" bg-bg-image bg-no-repeat bg-cover dark:bg-bg-image-dark bg-fixed font-font-rubik">
       <div className=" container mx-auto md:flex justify-center gap-6 ">
-        <div className="md:w-1/3 border  ">
+        <div className="md:w-1/3 ">
           <MainSider />
         </div>
-        <div className=" md:w-2/3 border md:py-20 space-y-2 flex flex-col">
+        <div className=" md:w-2/3 md:py-20 space-y-2 flex flex-col">
             <Navbar></Navbar>
           {children}
           

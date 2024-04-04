@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { userData } from "@/lib/BuilderApi";
 import ServiceCard from "./ServiceCard";
+import { pageWrapper } from "@/app/page-wrapper";
 const Service = () => {
   const [services, setServices] = useState([]);
 
@@ -15,7 +16,7 @@ const Service = () => {
       .then((res) => setServices(res.user.services))
       .catch((err) => console.log(err));
   }, []);
-  console.log(services);
+  // console.log(services);
   const NextArrow = (props) => (
     <div
       {...props}
@@ -85,13 +86,15 @@ const Service = () => {
   ));
   return (
     <div className=" p-3 mt-7">
-      <h2 className="text-4xl font-bold text-center"> WHAT I DO </h2>
-      <h3 className="text-xl font-bold text-center" >MY Services</h3>
-      <div className="gap-8 pl-4">
-        <Slider {...settings} className=" ">
-          {products}
-        </Slider>
-      </div>
+      <pageWrapper>
+        <h2 className="text-4xl font-bold text-center"> WHAT I DO </h2>
+        <h3 className="text-xl font-bold text-center">MY Services</h3>
+        <div className="gap-8 pl-4">
+          <Slider {...settings} className=" ">
+            {products}
+          </Slider>
+        </div>
+      </pageWrapper>
     </div>
   );
 };

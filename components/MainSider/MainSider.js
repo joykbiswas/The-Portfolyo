@@ -24,13 +24,12 @@ const MainSidear = () => {
       .then((res) => SetUsers(res))
       .catch((err) => console.log(err));
   }, []);
-  console.log(users);
+  // console.log(users);
   return (
     <div className="flex sticky top-0 justify-between flex-col items-center space-y-3 py-24 ">
       <div className="rounded-md z-10   -mb-40">
       {users && (
               <Image
-              data-aos="fade-down"
                 src={users?.user.about.avatar.url} // Assuming user data has avatar information
                 width={100}
                 height={100}
